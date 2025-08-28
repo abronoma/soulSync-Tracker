@@ -2,14 +2,14 @@ import express from 'express';
 import mongoose from 'mongoose';
 import "dotenv/config";
 import cors from "cors"
+import userRouter from '../soulsync-tracker-api/routes/auth.js';
 
 const app = express();
 
 const port = process.env.PORT || 3001;
 
 //creating Database
- await mongoose
-  .connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGO_URI, {})
   .then(() => console.log("Connected to Soulsync-API"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
@@ -23,7 +23,7 @@ app.use(cors());
 //app.use(soulRouter);
 
 //routes for user
-//app.use(userRouter);
+app.use(userRouter);
 
 
 app.listen(port, ()=>{

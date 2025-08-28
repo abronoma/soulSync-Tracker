@@ -1,10 +1,11 @@
-import { userModel } from "../models/userModels.js";
+import { userModel } from "../models/userModel.js";
 import { sendEmail } from "../utils/mailing.js";
-import {
-  loginUserValidator,
-  registerUserValidator,
-  updateUserValidator,
-} from "../validators/userAdsWebApp.js";
+// import {
+//   loginUserValidator,
+//   registerUserValidator,
+//   updateUserValidator,
+// } from "../validators/userAdsWebApp.js";
+import { registerUserValidator, loginUserValidator, updateUserValidator } from "../validators/auth.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
